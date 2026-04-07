@@ -15,7 +15,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-DB_PATH = r"c:\Users\damia\Desktop\Proyecto BI\data\utu_bi.db"
+DB_PATH = os.path.join(os.path.dirname(__file__), "../data/utu_bi.db")
 
 def get_db_conn():
     return sqlite3.connect(DB_PATH)
