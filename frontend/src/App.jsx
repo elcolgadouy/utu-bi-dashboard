@@ -29,7 +29,7 @@ export default function Dashboard() {
 
   // Load filter options once
   useEffect(() => {
-    axios.get('http://localhost:8000/filters').then(res => {
+    axios.get('/filters').then(res => {
       setAvailableFilters(res.data);
     }).catch(err => console.error("Filter fetch error", err));
   }, []);
@@ -50,9 +50,9 @@ export default function Dashboard() {
       const queryStr = params.toString() ? `?${params.toString()}` : '';
 
       const [trendsRes, levelsRes, approvalRes] = await Promise.all([
-        axios.get(`http://localhost:8000/metrics/enrollment/trends${queryStr}`),
-        axios.get(`http://localhost:8000/metrics/enrollment/levels${queryStr}`),
-        axios.get(`http://localhost:8000/metrics/approval/overview${queryStr}`)
+        axios.get(`/metrics/enrollment/trends${queryStr}`),
+        axios.get(`/metrics/enrollment/levels${queryStr}`),
+        axios.get(`/metrics/approval/overview${queryStr}`)
       ]);
       
       setTrends(trendsRes.data);

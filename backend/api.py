@@ -1,5 +1,6 @@
 from fastapi import FastAPI, Query
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 import sqlite3
 import pandas as pd
 import os
@@ -85,6 +86,12 @@ def get_approval_overview(year: str = None, level: str = None, dept: str = None)
         "aprobados": int(row['aprobados']), 
         "tasa": float(tasa)
     }
+
+# ESTO INDICA A PYTHON QUE SIRVA LA APLICACIÓN REACT SI NO SE LLAMA A UNA API
+import os
+frontend_dist = os.path.join(os.path.dirname(__file__), "../frontend/dist")
+if os.path.exists(frontend_dist):
+    app.mount("/", StaticFiles(directory=frontend_dist, html=True), name="frontend")
 
 if __name__ == "__main__":
     import uvicorn
