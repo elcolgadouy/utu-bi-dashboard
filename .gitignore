@@ -1,0 +1,25 @@
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+frontend/.eslintcache
+
+# Backend Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.env
+venv/
+.venv/
+ENV/
+env/
+
+# Data Files (Para no saturar GitHub con excels gigantes)
+data/*.xlsx
+data/*.xls
+data/*.csv
+# (Dejamos utu_bi.db porque es liviano y ya está procesado, o lo ignoramos si es muy grande. Al tener 584 filas, pesa KB).
+
+# OS
+.DS_Store
+Thumbs.db

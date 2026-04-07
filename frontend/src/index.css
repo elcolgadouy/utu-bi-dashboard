@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-800 antialiased font-sans;
+  }
+}
+
+@layer components {
+  .inst-card {
+    @apply bg-white border border-slate-200 shadow-inst rounded-xl;
+  }
+  
+  .inst-btn {
+    @apply px-4 py-2 bg-utu-blue text-white rounded-md font-medium hover:bg-utu-light transition-colors flex items-center justify-center gap-2;
+  }
+}
+
+/* Custom scrollbar clean */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
